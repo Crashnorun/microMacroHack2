@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>microMacro.dll</Assembly>
+    <AddInId>b1fd3b82-2c8f-4d0a-91a6-24f5afef81b8</AddInId>
+    <FullClassName>microMacro.cmd</FullClassName>
+    <Vendor>XXXX</Vendor>
+	<VendorId>XXXX</VendorId>
+    <Text>microMacro</Text>
+    <Description>Read Image Data</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <Discipline>Any</Discipline>
+    <LanguageType>Unknown</LanguageType>
+  </AddIn>
+</RevitAddIns>

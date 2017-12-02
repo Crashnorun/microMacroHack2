@@ -1,0 +1,5 @@
+C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\bin\Debug\microMacro.dll
+C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\bin\Debug\microMacro.pdb
+C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\obj\Debug\microMacro.csprojResolveAssemblyReference.cache
+C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\obj\Debug\microMacro.dll
+C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\obj\Debug\microMacro.pdb
