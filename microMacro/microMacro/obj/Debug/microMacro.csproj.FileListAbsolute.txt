@@ -3,3 +3,16 @@ C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro
 C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\obj\Debug\microMacro.csprojResolveAssemblyReference.cache
 C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\obj\Debug\microMacro.dll
 C:\Users\charl\Documents\GitHub\microMacroHack\Desktop_App\microMacro\microMacro\obj\Debug\microMacro.pdb
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\microMacro.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\microMacro.pdb
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\Flux.SDK.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\Flux.Logger.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\websocket-sharp.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\Flux.Serialization.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\Flux.SDK.xml
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\Flux.Logger.xml
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\bin\Debug\Flux.Serialization.xml
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\obj\Debug\microMacro.csprojResolveAssemblyReference.cache
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\obj\Debug\microMacro.dll
+C:\Users\charl\Documents\GitHub\microMacroHack2\microMacro\microMacro\obj\Debug\microMacro.pdb

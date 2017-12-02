@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Flux.SDK">
+      <HintPath>..\..\..\flux-sdk-cs\Src\bin\Debug\Flux.SDK.dll</HintPath>
+    </Reference>
     <Reference Include="RevitAPI">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2016\RevitAPI.dll</HintPath>
       <Private>False</Private>

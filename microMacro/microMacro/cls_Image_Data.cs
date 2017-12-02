@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace microMacro
 {
-    class cls_Image_Data
+    public class cls_Image_Data
     {
 
         #region PROPERTIES
@@ -32,7 +32,7 @@ namespace microMacro
         }
         #endregion
 
-        cls_Image_Data()
+       public cls_Image_Data()
         {
             ResultCategories = new List<string>();
         }
