@@ -58,8 +58,8 @@ namespace microMacro
              * Get the data from Flux
              * deseralize data to cls image data
              * do a search for revit categories based on image data
-             * get project location
-             * get image geo location 
+             * ---get project location
+             * ---get image geo location 
              * get the revit categories from cls image data
              * translate geo location to xy coordinates
              * find the location of the revit elements by xy coordinates
@@ -69,6 +69,7 @@ namespace microMacro
 
             Open3DView();                       // open a default 3d view
             FluxLogin();                        // log into flux
+            cls_Helper.GetLocation(RvtDoc, imgData);
             return Result.Succeeded;
         }
 

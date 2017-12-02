@@ -3,48 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 using Autodesk.Revit.DB;
 
 namespace microMacro
 {
-    public class cls_Helper
+    public static class cls_Helper
     {
-        public Category rvtCategory;
-        public Dictionary<string, List<BuiltInCategory>> categories;
 
-        // create a list of google categories
-        public void CategoryComparison(cls_Image_Data imgData)
+        public static XYZ offset;
+
+        public static void GetLocation(Document document, cls_Image_Data tbdDataSet)
         {
-            categories.Add("mechanical", new List<BuiltInCategory> { BuiltInCategory.OST_MechanicalEquipment });
-            categories.Add("machine", new List<BuiltInCategory> { BuiltInCategory.OST_MechanicalEquipment });
+            // Get the SiteLocation instance.
+            SiteLocation site = document.SiteLocation;
 
-            categories.Add("plumbing", new List<BuiltInCategory> { BuiltInCategory.OST_PlumbingFixtures });
-            categories.Add("duct", new List<BuiltInCategory> { BuiltInCategory.OST_DuctCurves,
-            BuiltInCategory.OST_DuctFitting,BuiltInCategory.OST_DuctSystem, BuiltInCategory.OST_DuctTerminal });
+            // Angles are in radians when coming from Revit API, so we 
+            // convert to degrees for display
+            const double angleRatio = Math.PI / 180;   // angle conversion factor
 
-            categories.Add("light", new List<BuiltInCategory> { BuiltInCategory.OST_LightingDevices, BuiltInCategory.OST_LightingFixtures,
-            BuiltInCategory.OST_Lights});
-            categories.Add("lights", new List<BuiltInCategory> { BuiltInCategory.OST_LightingDevices, BuiltInCategory.OST_LightingFixtures,
-            BuiltInCategory.OST_Lights});
-            categories.Add("lighting", new List<BuiltInCategory> { BuiltInCategory.OST_LightingDevices, BuiltInCategory.OST_LightingFixtures,
-            BuiltInCategory.OST_Lights});
+            // Format the prompt information of basepoint. 
+            String prompt = "Current project's Site location information:";
+            prompt += "\n\t" + "Latitude: " + site.Latitude / angleRatio + "XX";
+            prompt += "\n\t" + "Longitude: " + site.Longitude / angleRatio + "YY";
+            prompt += "\n\t" + "TimeZone: " + site.TimeZone;
 
-            categories.Add("door", new List<BuiltInCategory> { BuiltInCategory.OST_Doors });
-            categories.Add("window", new List<BuiltInCategory> { BuiltInCategory.OST_Windows });
-            categories.Add("glass", new List<BuiltInCategory> { BuiltInCategory.OST_Windows });
-            categories.Add("wall", new List<BuiltInCategory> { BuiltInCategory.OST_Walls });
-            categories.Add("floor", new List<BuiltInCategory> { BuiltInCategory.OST_Floors });
-            categories.Add("room", new List<BuiltInCategory> { BuiltInCategory.OST_Rooms });
+            // Format the prompt information of basepoint offset
+            double x = tbdDataSet.Latitude - site.Latitude / angleRatio;
+            double y = tbdDataSet.Longidude - site.Longitude / angleRatio * -1;
 
-            categories.Add("column", new List<BuiltInCategory> { BuiltInCategory.OST_StructuralColumns });
-            categories.Add("structure", new List<BuiltInCategory> { BuiltInCategory.OST_StructuralColumns });
-            categories.Add("beam", new List<BuiltInCategory> { BuiltInCategory.OST_StructuralFraming, BuiltInCategory.OST_StructuralFramingSystem });
+            //define offset values
+            offset = new XYZ(x, y, 0);
 
-            categories.Add("chair", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
-            categories.Add("table", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
-            categories.Add("sofa", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
+            //Format the prompt for the offset distance from basepoint
+            prompt += "\n\t" + offset.X + "\n\t" + offset.Y;
+
+            // Give the user some information.
+            Debug.Print("Revit", prompt);
 
         }
+
     }
 }
