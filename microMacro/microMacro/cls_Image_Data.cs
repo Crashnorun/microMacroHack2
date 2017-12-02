@@ -105,6 +105,16 @@ namespace microMacro
             categories.Add("chair", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
             categories.Add("table", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
             categories.Add("sofa", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
+
+            Element temp;
+            Location loc = temp.Location;
+            if(typeof(loc) == LocationCurve)
+            {
+
+            } else if (typeof(loc) == LocationPoint)
+            {
+
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Diagnostics;
 
 using Autodesk.Revit.DB;
 
+
 namespace microMacro
 {
     public static class cls_Helper
@@ -44,5 +45,23 @@ namespace microMacro
 
         }
 
+
+        public static void GetElementLocation(Element rvtElement)
+        {
+           
+            Location loc = rvtElement.Location;
+            if (loc.GetType() == typeof(LocationCurve))
+            {
+                // do some cool stuff
+                // find start point
+                // find end point
+                // subtract values
+                // make a mid point
+            }
+            else if (loc.GetType() ==typeof( LocationPoint))
+            {
+                // just get the point
+            }
+        }
     }
 }

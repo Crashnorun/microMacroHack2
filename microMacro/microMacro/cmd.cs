@@ -55,13 +55,13 @@ namespace microMacro
             /*
              * ---open 3d view
              * ---Log into flux
+             *  ---get project location
+             * ---get image geo location
+             * translate geo location to xy coordinates
              * Get the data from Flux
              * deseralize data to cls image data
              * do a search for revit categories based on image data
-             * ---get project location
-             * ---get image geo location 
              * get the revit categories from cls image data
-             * translate geo location to xy coordinates
              * find the location of the revit elements by xy coordinates
              * get element parameters
              * change element parameter value  
