@@ -35,6 +35,14 @@
     <Reference Include="Flux.SDK">
       <HintPath>..\..\..\flux-sdk-cs\Src\bin\Debug\Flux.SDK.dll</HintPath>
     </Reference>
+    <Reference Include="Flux.Serialization, Version=2.2.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\flux-sdk-cs\Src\bin\Debug\Flux.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\01_DLL's\JSON\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RevitAPI">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2016\RevitAPI.dll</HintPath>
       <Private>False</Private>

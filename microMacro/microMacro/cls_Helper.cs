@@ -14,7 +14,8 @@ namespace microMacro
     {
 
         public static XYZ offset;
-
+        public static XYZ locationPoint;
+        
         public static void GetLocation(Document document, cls_Image_Data tbdDataSet)
         {
             // Get the SiteLocation instance.
@@ -42,26 +43,28 @@ namespace microMacro
 
             // Give the user some information.
             Debug.Print("Revit", prompt);
-
         }
-
 
         public static void GetElementLocation(Element rvtElement)
         {
-           
             Location loc = rvtElement.Location;
             if (loc.GetType() == typeof(LocationCurve))
             {
-                // do some cool stuff
-                // find start point
-                // find end point
-                // subtract values
-                // make a mid point
+                LocationCurve locCrv = (LocationCurve)loc;
+                locationPoint = new XYZ(((locCrv.Curve.GetEndPoint(0).X + locCrv.Curve.GetEndPoint(1).X) / 2), ((locCrv.Curve.GetEndPoint(0).Y + locCrv.Curve.GetEndPoint(1).Y) / 2), ((locCrv.Curve.GetEndPoint(0).Z + locCrv.Curve.GetEndPoint(1).Z) / 2));
             }
             else if (loc.GetType() ==typeof( LocationPoint))
             {
-                // just get the point
+                LocationPoint locpt = (LocationPoint)loc;
+                locationPoint = new XYZ(locpt.Point.X, locpt.Point.Y, locpt.Point.Z);
             }
         }
+
+        public static void ChangePhase(Element element)
+        {
+            //element.Parameters.p
+        }
+
+        
     }
 }

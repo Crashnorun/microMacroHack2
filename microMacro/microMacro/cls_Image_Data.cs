@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//using Flux.Serialization;
 using Autodesk.Revit.DB;
+using Newtonsoft.Json;
 
 namespace microMacro
 {
@@ -12,27 +13,38 @@ namespace microMacro
     {
 
         #region PROPERTIES
+        [JsonIgnore]
         private double longitude;
+
+        [JsonIgnore]
         private double latitude;
+
+        [JsonIgnore]
         private List<string> resultCatetgories;
 
+        [JsonProperty("longitude")]
         public double Longidude
         {
             get { return longitude; }
             set { longitude = value; }
         }
 
+        [JsonProperty("latitude")]
         public double Latitude
         {
             get { return latitude; }
             set { latitude = value; }
         }
 
+        [JsonProperty("categories")]
         public List<string> ResultCategories
         {
-            get { return ResultCategories; }
+            get { return resultCatetgories; }
             set { resultCatetgories = value; }
         }
+
+        [JsonIgnore]
+        public Dictionary<string, List<BuiltInCategory>> categories;
         #endregion
 
         public cls_Image_Data()
@@ -72,11 +84,10 @@ namespace microMacro
             }
         }
 
-        public Dictionary<string, List<BuiltInCategory>> categories;
-
         // create a list of google categories
         public void CategoryComparison(cls_Image_Data imgData)
         {
+            #region CATEGORIES
             categories.Add("mechanical", new List<BuiltInCategory> { BuiltInCategory.OST_MechanicalEquipment });
             categories.Add("machine", new List<BuiltInCategory> { BuiltInCategory.OST_MechanicalEquipment });
 
@@ -105,15 +116,18 @@ namespace microMacro
             categories.Add("chair", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
             categories.Add("table", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
             categories.Add("sofa", new List<BuiltInCategory> { BuiltInCategory.OST_Furniture });
+            #endregion
 
-            Element temp;
-            Location loc = temp.Location;
-            if(typeof(loc) == LocationCurve)
+            List<Element> elements = new List<Element>();
+
+            for (int i = 0; i < imgData.resultCatetgories.Count; i++)
             {
-
-            } else if (typeof(loc) == LocationPoint)
-            {
-
+                List<BuiltInCategory> tempCategories = categories[imgData.resultCatetgories[i]];
+                
+                for (int j = 0; j < tempCategories.Count; i++)
+                {
+                    var stuff = from tempEle in 
+                }
             }
         }
     }
